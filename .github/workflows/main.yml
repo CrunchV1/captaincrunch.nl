@@ -1,0 +1,17 @@
+name: MAIN
+
+on: [push, workflow_dispatch]
+
+
+jobs:
+  deploy:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Push to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          script: cd /var/www/hugo/ && git pull origin main && rm -rf /var/www/hugo/public/ && rm -rf /var/www/captaincrunch.nl/hugo/*  && mkdir /var/www/hugo/public/ && /home/captain/.linuxbrew/bin/hugo --debug  && mv /var/www/hugo/public/* /var/www/captaincrunch.nl/hugo/
