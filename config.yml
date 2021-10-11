@@ -70,7 +70,7 @@ params:
 
     # home-info mode
     homeInfoParams:
-        Title: "Hi there \U0001F44B, my name is Crunch!"
+        Title: "Hi there \U0001F44B, my name is Crunch#8996!"
         Content: "| Hackthebox | High Schooler | Passionate about Cyber Security |"
 
     socialIcons:
