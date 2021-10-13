@@ -1,7 +1,7 @@
 ---
-title: "My 2nd Important post"
+title: "My Important post"
 date: 2020-09-15T11:30:03+00:00
-weight: 2
+weight: 1
 ---
 
 We start with a nmap scan
